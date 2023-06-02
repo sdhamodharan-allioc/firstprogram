@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="helloBean" class="com.learning.spring.beans.HelloWorld">
+		<property name="name" value="JAVA WORLD" />
+	</bean>
+
+	<bean id="employeeBean" class="com.learning.spring.beans.Employee" scope="prototype">
+		<constructor-arg name="employeeId" value="100"/>	
+		<constructor-arg name="employeeName" value="Sam"/>
+		<constructor-arg name="salary" value="10000"/>
+		<constructor-arg name="address" ref="addressBean" />
+	</bean>
+	
+	<bean id="addressBean" class="com.learning.spring.beans.Address">
+		<constructor-arg  name="building" value="Srinivasa Building"/>
+		<constructor-arg name="city" value="Bangalore"/>
+		<constructor-arg name="pincode" value="560048"/>
+	</bean>
+</beans>
